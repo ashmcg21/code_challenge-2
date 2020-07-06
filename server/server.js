@@ -2,10 +2,15 @@ const express = require( 'express' );
 const app = express();
 const bodyParser = require( 'body-parser' );
 const PORT = 5000;
+const history = [];
 
 // use bodyParser.urlencoded throughout the app with this:
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+app.post('/jokes', (req, res) => {
+  const jokeAdded = req.body;
+  
 let jokes = [
   {
     whoseJoke: "Danny",
@@ -34,7 +39,11 @@ let jokes = [
   }
 ];
 
+});
 
+app.get('/jokes', (req, res) => {
+  res.send(history);
+});
 
 // serve back static files
 app.use(express.static('server/public'));
