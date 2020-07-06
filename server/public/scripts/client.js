@@ -8,14 +8,13 @@ function onReady() {
     $('#addJokeButton').on('submit', addJokes);
 }
 
-
 function addJokes(event){
     event.preventDefault();
     
     const jokeAdded = {
-        name: $('whoseJokeIn').val(''),
-        question: $('questionIn').val(''),
-        answer: $('punchlineIn').val(''),
+        name: $('#whoseJokeIn').val(''),
+        question: $('#questionIn').val(''),
+        answer: $('#punchlineIn').val(''),
     }
     jokes.push(addJokes);
   console.table(jokes);
